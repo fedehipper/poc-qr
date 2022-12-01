@@ -32,11 +32,13 @@ const QrComponent = () => {
 
     return (
         <div >
+            {/* @ts-ignore */}
             <QrReader
                 ViewFinder={() => <ScanOverlay />}
                 containerStyle={{ justifyContent: 'center' }}
                 onResult={(result, error) => {
                     if (!!result) {
+                        // @ts-ignore
                         setData(result?.text);
                     }
 
@@ -45,8 +47,7 @@ const QrComponent = () => {
                     }
                 }}
                 videoStyle={{ width: 'auto' }}
-            >
-            </QrReader>
+            />
         </div>
     );
 };
