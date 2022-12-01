@@ -48,7 +48,7 @@ const QrComponent = () => {
                 }}
                 videoStyle={{ width: 'auto', height: 'auto' }}
                 constraints={{
-                    facingMode: 'left'
+                    facingMode: 'right'
                 }}
             />
             <h3>{data}</h3>
