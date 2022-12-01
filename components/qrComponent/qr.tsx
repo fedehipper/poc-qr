@@ -47,9 +47,8 @@ const QrComponent = () => {
                     }
                 }}
                 videoStyle={{ width: 'auto', height: 'auto' }}
-                constraints={{
-                    facingMode: 'environment'
-                }}
+                {/* @ts-ignore */}
+                constraints={{ 'facingMode': 'environment', focusMode: "continuous", 'zoom': 1.5 }}
             />
             <h3>{data}</h3>
         </div>
