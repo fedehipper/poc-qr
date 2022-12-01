@@ -46,7 +46,7 @@ const QrComponent = () => {
                         console.info(error);
                     }
                 }}
-                videoStyle={{ width: 'auto' }}
+                videoStyle={{ width: 'auto', height: 'auto' }}
                 constraints={{
                     facingMode: 'environment'
                 }}
