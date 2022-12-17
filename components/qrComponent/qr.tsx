@@ -29,9 +29,11 @@ function ScanOverlay() {
 
 const QrComponent = () => {
     const [data, setData] = useState('');
+    const [facingMode, setFacingMode] = useState('enviroment');
 
     return (
         <div >
+            <button onClick={() => setFacingMode(facingMode === 'enviroment' ? 'user' : 'enviroment')}>Cambiar cámara</button>
             {/* @ts-ignore */}
             <QrReader
                 ViewFinder={() => <ScanOverlay />}
@@ -48,7 +50,7 @@ const QrComponent = () => {
                 }}
                 videoStyle={{ width: 'auto', height: 'auto' }}
                 //@ts-ignore
-                constraints={{ 'facingMode': 'environment', focusMode: "continuous", 'zoom': 1.5 }}
+                constraints={{ 'facingMode': { facingMode }, focusMode: "continuous", 'zoom': 1.5 }}
             />
             <h3>Lectura: {data}</h3>
         </div>
